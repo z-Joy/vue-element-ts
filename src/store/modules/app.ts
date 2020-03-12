@@ -8,7 +8,8 @@ export enum DeviceType {
 }
 
 export interface IAppState {
-  device: DeviceType
+  device: DeviceType,
+  drawerSize: string,
   sidebar: {
     opened: boolean
     withoutAnimation: boolean
@@ -17,10 +18,14 @@ export interface IAppState {
 
 @Module({ dynamic: true, store, name: 'app' })
 class App extends VuexModule implements IAppState {
+  private isOpened: boolean = getSidebarStatus() !== 'closed';
   public sidebar = {
-    opened: getSidebarStatus() !== 'closed',
+    opened: this.isOpened,
     withoutAnimation: false
   }
+
+  public drawerSize = this.isOpened ? 'calc(100% - 210px)' : 'calc(100% - 54px)';
+
   public device = DeviceType.Desktop
 
   @Mutation
@@ -28,8 +33,10 @@ class App extends VuexModule implements IAppState {
     this.sidebar.opened = !this.sidebar.opened
     this.sidebar.withoutAnimation = withoutAnimation
     if (this.sidebar.opened) {
+      this.drawerSize = 'calc(100% - 210px)'
       setSidebarStatus('opened')
     } else {
+      this.drawerSize = 'calc(100% - 54px)'
       setSidebarStatus('closed')
     }
   }
