@@ -1,15 +1,23 @@
 import axios from 'axios'
 import { Message, MessageBox } from 'element-ui'
 import { UserModule } from '@/store/modules/user'
+import apiMap from '@/utils/apimap/index'
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000
 })
 
+const nodeEnv: any = process.env.NODE_ENV
+
 // Request interceptors
 service.interceptors.request.use(
-  (config) => {
+  (config: any) => {
+    const url: any = apiMap[config.url][nodeEnv];
+    config.url = url;
+    if (nodeEnv === 'mock') {
+      config.method = 'get'
+    }
     // Add X-Access-Token header to every request, you can add other custom headers here
     if (UserModule.token) {
       config.headers['X-Access-Token'] = UserModule.token

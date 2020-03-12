@@ -1,21 +1,21 @@
-import request from '@/utils/request-test'
+import request from '@/utils/request'
 
 export const getUserInfo = (data: any) =>
   request({
-    url: '/users/info',
+    url: 'usersInfo',
     method: 'post',
     data
   })
 
 export const login = (data: any) =>
   request({
-    url: '/users/login',
+    url: 'usersLogin',
     method: 'post',
     data
   })
 
 export const logout = () =>
   request({
-    url: '/users/logout',
+    url: 'usersLogout',
     method: 'post'
   })
