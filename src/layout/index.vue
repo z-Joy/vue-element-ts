@@ -101,6 +101,15 @@ export default class extends mixins(ResizeMixin) {
   overflow: hidden;
 }
 
+.fixed-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  width: calc(100% - #{$sideBarWidth});
+  transition: width 0.28s;
+}
+
 .hideSidebar {
   .main-container {
     margin-left: 54px;
@@ -108,6 +117,10 @@ export default class extends mixins(ResizeMixin) {
 
   .sidebar-container {
     width: 54px !important;
+  }
+
+  .fixed-header {
+    width: calc(100% - 54px)
   }
 }
 
@@ -133,6 +146,10 @@ export default class extends mixins(ResizeMixin) {
       transition-duration: 0.3s;
       transform: translate3d(-$sideBarWidth, 0, 0);
     }
+  }
+
+  .fixed-header {
+    width: 100%;
   }
 }
 

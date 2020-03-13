@@ -172,7 +172,7 @@ export default class extends Vue {
 
 <style lang="scss" scoped>
 .svg-icon {
-  margin-right: 16px;
+  margin-right: 10px;
 }
 
 .simple-mode {

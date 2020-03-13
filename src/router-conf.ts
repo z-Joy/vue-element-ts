@@ -18,7 +18,7 @@ const routerConf: RouteConfig[] = [
     redirect: '/dashboard',
     children: [
       {
-        name: 'dashboard',
+        name: 'Dashboard',
         path: 'dashboard',
         component: () => import(/* webpackChunkName: "dashboard" */ '@/views/dashboard/index.vue'),
         meta: {
@@ -39,7 +39,7 @@ const routerConf: RouteConfig[] = [
     },
     children: [
       {
-        name: 'tree',
+        name: 'Tree',
         path: 'tree',
         component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
         meta: {
@@ -48,7 +48,7 @@ const routerConf: RouteConfig[] = [
         }
       },
       {
-        name: 'form',
+        name: 'Form',
         path: 'form',
         component: () => import(/* webpackChunkName: "form" */ '@/views/form/index.vue'),
         meta: {

@@ -17,3 +17,21 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 // Apply overrided variables in Element UI
 @import '~element-ui/packages/theme-chalk/src/index';
+
+
+.el-drawer__header {
+  margin-bottom: 0;
+}
+
+.el-drawer__body {
+  padding: 20px;
+}
+
+.el-menu-item,.el-submenu__title {
+  height: 50px;
+  line-height: 50px;
+}
+
+.el-submenu__icon-arrow {
+  top: 55%;
+}

@@ -50,20 +50,21 @@ export default class extends Vue {
       item => item.meta && item.meta.title
     )
     const first = matched[0]
-    if (!this.isDashboard(first)) {
-      matched = [
-        { path: '/dashboard', meta: { title: 'Dashboard' } } as RouteRecord
-      ].concat(matched)
-    }
+    // TODO 目前该项目无首页
+    // if (!this.isDashboard(first)) {
+    //   matched = [
+    //     { path: '/dashboard', meta: { title: 'Dashboard' } } as RouteRecord
+    //   ].concat(matched)
+    // }
     this.breadcrumbs = matched.filter(item => {
       return item.meta && item.meta.title && item.meta.breadcrumb !== false
     })
   }
 
-  private isDashboard(route: RouteRecord) {
-    const name = route && route.meta && route.meta.title
-    return name === 'Dashboard'
-  }
+  // private isDashboard(route: RouteRecord) {
+  //   const name = route && route.meta && route.meta.title
+  //   return name === 'Dashboard'
+  // }
 
   private pathCompile(path: string) {
     // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
@@ -75,10 +76,10 @@ export default class extends Vue {
   private handleLink(item: any) {
     const { redirect, path } = item
     if (redirect) {
-      this.$router.push(redirect)
+      this.$router.push(redirect).catch(() => {})
       return
     }
-    this.$router.push(this.pathCompile(path))
+    this.$router.push(this.pathCompile(path)).catch(() => {})
   }
 }
 </script>

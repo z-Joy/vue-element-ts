@@ -24,7 +24,7 @@ class App extends VuexModule implements IAppState {
     withoutAnimation: false
   }
 
-  public drawerSize = this.isOpened ? 'calc(100% - 210px)' : 'calc(100% - 54px)';
+  public drawerSize = this.isOpened ? 'calc(100% - 140px)' : 'calc(100% - 54px)';
 
   public device = DeviceType.Desktop
 
@@ -33,7 +33,7 @@ class App extends VuexModule implements IAppState {
     this.sidebar.opened = !this.sidebar.opened
     this.sidebar.withoutAnimation = withoutAnimation
     if (this.sidebar.opened) {
-      this.drawerSize = 'calc(100% - 210px)'
+      this.drawerSize = 'calc(100% - 140px)'
       setSidebarStatus('opened')
     } else {
       this.drawerSize = 'calc(100% - 54px)'
