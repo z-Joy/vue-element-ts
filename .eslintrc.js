@@ -27,7 +27,8 @@ module.exports = {
     'vue/key-spacing': 'error',
     'vue/match-component-file-name': 'error',
     'vue/object-curly-spacing': 'error',
-    'semi': 0
+    'semi': 0,
+    'vue/max-attributes-per-line': 0
   },
   'extends': [
     'eslint:recommended',

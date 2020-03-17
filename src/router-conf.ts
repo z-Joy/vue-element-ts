@@ -30,21 +30,21 @@ const routerConf: RouteConfig[] = [
     ]
   },
   {
-    path: '/example',
+    path: '/organization',
     component: Layout,
-    redirect: '/example/tree',
+    redirect: '/organization/department',
     meta: {
-      title: 'Example',
-      icon: 'example'
+      title: '组织',
+      icon: 'dashboard'
     },
     children: [
       {
-        name: 'Tree',
-        path: 'tree',
+        name: '部门管理',
+        path: 'department',
         component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
         meta: {
-          title: 'Tree',
-          icon: 'tree'
+          title: '部门管理',
+          icon: 'dashboard'
         }
       },
       {
