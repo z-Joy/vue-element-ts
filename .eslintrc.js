@@ -28,7 +28,8 @@ module.exports = {
     'vue/match-component-file-name': 'error',
     'vue/object-curly-spacing': 'error',
     'semi': 0,
-    'vue/max-attributes-per-line': 0
+    'vue/max-attributes-per-line': 0,
+    'vue/singleline-html-element-content-newline': 0
   },
   'extends': [
     'eslint:recommended',

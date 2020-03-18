@@ -41,7 +41,7 @@ const routerConf: RouteConfig[] = [
       {
         name: '部门管理',
         path: 'department',
-        component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
+        component: () => import(/* webpackChunkName: "tree" */ '@/views/organization/department/index.vue'),
         meta: {
           title: '部门管理',
           icon: 'dashboard'

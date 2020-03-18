@@ -49,3 +49,20 @@ a:hover {
 .app-container {
   padding: 20px;
 }
+
+.btz-flex {
+  display: flex;
+  align-items: center;
+  &.between {
+    justify-content: space-between;
+  }
+}
+
+.btz-green {
+  color: $green;
+}
+
+.btz-hover {
+  cursor: pointer;
+  color: $green;
+}

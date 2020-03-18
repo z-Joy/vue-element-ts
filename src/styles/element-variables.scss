@@ -11,6 +11,7 @@ $--color-text-regular: #1f2d3d;
 $--border-color-light: #dfe4ed;
 $--border-color-lighter: #e6ebf5;
 $--table-border:1px solid#dfe6ec;
+$--table-th-bg: #E8E8E8;
 
 // Icon font path, required
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
@@ -21,6 +22,8 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 .el-drawer__header {
   margin-bottom: 0;
+  padding: 0 20px;
+  height: 65px;
 }
 
 .el-drawer__body {
@@ -34,4 +37,9 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 .el-submenu__icon-arrow {
   top: 55%;
+}
+
+.el-table th {
+  padding: 9px 0;
+  background-color: $--table-th-bg;
 }
